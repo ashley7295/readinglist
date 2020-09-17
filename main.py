@@ -33,7 +33,12 @@ def create_menu():
 
 def add_book():
     new_book = ui.get_book_info()
-    new_book.save()
+    books = store.get_all_books()
+    
+    if new_book in books:
+        new_book.save()
+    else:
+        print ("This book has already been added")
     
 
 def show_read_books():
@@ -65,7 +70,6 @@ def change_read():
     book.read = new_read 
     book.save()
     print("you have changed the 'read or unread' status of this book. ")
-    
 
 def quit_program():
     ui.message('Thanks and bye!')
