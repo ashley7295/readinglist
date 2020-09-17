@@ -66,7 +66,6 @@ def change_read():
     new_read = ui.get_read_value()     
     book.read = new_read 
     book.save()
-    print("you have changed the 'read or unread' status of this book. ")
     
 
 def quit_program():
