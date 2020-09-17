@@ -35,7 +35,7 @@ def add_book():
     new_book = ui.get_book_info()
     books = store.get_all_books()
     
-    if new_book in books:
+    if new_book not in books:
         new_book.save()
     else:
         print ("This book has already been added")
