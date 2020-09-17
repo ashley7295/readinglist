@@ -23,11 +23,14 @@ class Menu:
         """ Verifies if a choice is one of the menu options
         :param choice: the choice to check
         :returns: True if the choice is a key in the menu options, False otherwise  """
+        #changes all inputs to upper before checking validation i.e. 'q' to 'Q'
+        choice = choice.upper()
         return choice in self.text_descriptions
 
 
     def get_action(self, choice):
         """ :returns: the function to invoke for the menu choice, or None if not found """
+   
         return self.functions.get(choice)
 
 

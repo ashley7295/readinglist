@@ -12,9 +12,14 @@ def main():
 
     while True:
         choice = ui.display_menu_get_choice(menu)
+        #needed for case insensitivity
+        choice = choice.upper()
+        
         action = menu.get_action(choice)
+        
         action()
         if choice == 'Q':
+            
             break
 
 
