@@ -26,7 +26,9 @@ class Book:
 
 
     def delete(self):
+        print('delete function called - before action test')
         self.bookstore._delete_book(self)
+        print('delete funtion called - after action test')
 
 
     def __str__(self):
