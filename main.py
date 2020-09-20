@@ -81,16 +81,16 @@ def delete_book():
 
     
     book_id = ui.get_book_id()
-   # book = store.get_book_by_id(book_id)
+    #checking input
     print(book_id) 
-    book_id = int(book_id) 
+   
    
    # successfully calls the delete function  
     Book.delete(book_id)
        
     #print(book + ' has been deleted')
     
-    print('Error occured while trying to delete book')
+    #print('Error occured while trying to delete book')
     #print(book + ' has been deleted')
 
 if __name__ == '__main__':
