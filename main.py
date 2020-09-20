@@ -67,6 +67,7 @@ def search_book():
 def change_read():
     
     book_id = ui.get_book_id()
+
     book = store.get_book_by_id(book_id) 
     #validation to check if the book exists 
     if book == None:
@@ -75,6 +76,9 @@ def change_read():
         new_read = ui.get_read_value()     
         book.read = new_read 
         book.save()
+        print("you have changed the 'read or unread' status of this book. ")
+
+
     
 
 def quit_program():

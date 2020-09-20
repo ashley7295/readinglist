@@ -17,6 +17,8 @@ class Book:
 
         self.bookstore = BookStore()
 
+    """ This save function is seeing if there is already an existing ID attatched to the book item, 
+    then it updates the book, otherwise if there is no ID it will add a new book with the _add_book function."""
 
     def save(self):
         if self.id:
