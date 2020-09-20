@@ -79,15 +79,16 @@ def quit_program():
 
 def delete_book():
 
-    
-    book_id = ui.get_book_id()
-    book = store.get_book_by_id(book_id)
-    
-    #checking input
+    #checking user input
     #print(book) 
-   
+
     #successfully calls the delete function  
-    book.delete()
+    try:
+        book_id = ui.get_book_id()
+        book = store.get_book_by_id(book_id)
+        book.delete()
+    except:
+        print ("Book not in bookstore")
        
     #print(book + ' has been deleted')
     
