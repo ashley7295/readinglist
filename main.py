@@ -12,9 +12,14 @@ def main():
 
     while True:
         choice = ui.display_menu_get_choice(menu)
+        #needed for case insensitivity
+        choice = choice.upper()
+        
         action = menu.get_action(choice)
+        
         action()
         if choice == 'Q':
+            
             break
 
 
@@ -33,8 +38,10 @@ def create_menu():
 
 def add_book():
     new_book = ui.get_book_info()
-    new_book.save()
-    
+    try:
+        new_book.save()
+    except:
+        print ("ERROR: Book is already in database")
 
 def show_read_books():
     read_books = store.get_books_by_read_value(True)
@@ -65,6 +72,8 @@ def change_read():
     book.read = new_read 
     book.save()
     print("you have changed the 'read or unread' status of this book. ")
+
+    
 
 def quit_program():
     ui.message('Thanks and bye!')
