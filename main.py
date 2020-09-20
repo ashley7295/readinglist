@@ -81,12 +81,13 @@ def delete_book():
 
     
     book_id = ui.get_book_id()
+    book = store.get_book_by_id(book_id)
+    
     #checking input
-    print(book_id) 
+    #print(book) 
    
-   
-   # successfully calls the delete function  
-    Book.delete(book_id)
+    #successfully calls the delete function  
+    book.delete()
        
     #print(book + ' has been deleted')
     
