@@ -78,22 +78,16 @@ def quit_program():
     ui.message('Thanks and bye!')
 
 def delete_book():
-
-    #checking user input
-    #print(book) 
-
-    #successfully calls the delete function  
+  
+    #gets the Book ID User Input, grabs the book by the ID, deletes the book, 
+    # if book ID is not in database, it lets the user know there was an error 
     try:
         book_id = ui.get_book_id()
         book = store.get_book_by_id(book_id)
         book.delete()
     except:
-        print ("Book not in bookstore")
-       
-    #print(book + ' has been deleted')
-    
-    #print('Error occured while trying to delete book')
-    #print(book + ' has been deleted')
+        print ("ERROR: Book Not Found")
+
 
 if __name__ == '__main__':
     main()
