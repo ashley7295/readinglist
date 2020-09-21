@@ -28,7 +28,9 @@ class Book:
 
 
     def delete(self):
+    
         self.bookstore._delete_book(self)
+        print ("Book has been Deleted from BookStore")
 
 
     def __str__(self):
